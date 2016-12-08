@@ -1,0 +1,54 @@
+﻿@model TheMovieList.Models.FavoriteIndex
+
+@{
+    ViewBag.Title = "My favorites";
+}
+
+@Html.Partial("_HeaderAllPages")
+
+<div class="content-all">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-12">
+                <a class="btn btn-add-more" href="@Model.ReturnUrl">Add more movies</a>
+            </div>
+        </div>
+
+        
+        <div class="row margin-small">
+            @foreach (var line in Model.Favorite.Lines)
+            {
+                <div class="col-lg-4 col-md-6 margin-small">
+                    <div class="movie-container">
+
+                        <!-- movie title -->
+                        <div class="movie-title">
+                            <h3>@line.Movie.Title</h3>
+                        </div>
+
+                        <!-- movie content -->
+                        <div class="movie-content">
+                            <p><strong>Title: </strong>@line.Movie.Title</p>
+                            <p><strong>Year: </strong>@line.Movie.Year</p>
+                            <p><strong>Director: </strong>@line.Movie.Director</p>
+                            <p><strong>Category: </strong><a href="#" class="btn-category">@line.Movie.Category.Name</a></p>
+
+                            @using (Html.BeginForm("RemoveFromFavorite", "Favorites"))
+                            {
+                                @Html.Hidden("MovieId", line.Movie.MovieId)
+                                @Html.HiddenFor(x => x.ReturnUrl)
+                                <input class="btn btn-remove" type="submit" value="Remove" />
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+
+        
+
+    </div>
+</div>
+

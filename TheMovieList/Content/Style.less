@@ -1,0 +1,245 @@
+﻿//BACKGROUNDS
+@white: #FFFFFF;
+@lightgrey: #ECEFF1;
+@grey:#90A4AE;
+@lightdarkgrey: #546E7A;
+@darkgrey: #263238;
+@darkred: #e23131;
+
+//TEXT-COLORS
+@white-text:#ffffff;
+@lightgrey-text:#d6a000;
+@grey-text:#101010;
+@lightdarkgrey-text: #546E7A;
+@darkgrey-text: #263238;
+
+
+//MARGIN
+@margin-extreme:40px;
+@margin-large:30px;
+@margin-medium: 20px;
+@margin-small:10px;
+@margin-bottom:20px;
+@margin-right:5px;
+@margin-left: 5px;
+
+
+
+body {
+}
+
+
+
+// ----------------------------------------------- STYLES FOR INDIVIDUAL PAGES -----------------------------------------------
+
+//HOMEPAGE 
+.home-header
+{
+    background-color:@lightgrey;
+    padding: 80px 0 150px;
+    background: url(../Photos/banner_03.jpg) no-repeat center top;
+    background-size:cover;
+}
+
+// ----------------------------------------------- STYLES FOR INDIVIDUAL PAGES -----------------------------------------------
+
+// ----------------------------------------------- STYLES FOR ALL PAGES -----------------------------------------------
+
+
+//HEADER ALL 
+.header-all 
+{
+    background-color:@lightgrey;
+    padding: 55px 0 50px;
+    background: url(../Photos/header_03.jpg) no-repeat center top;
+    background-size:cover;
+  
+}
+
+//CONTENT ALL
+.content-all 
+{
+    padding:30px 0 40px;
+    background-color:@white;
+
+    .info-box 
+    {
+        background-color: @lightgrey;
+        border: 1px solid @lightdarkgrey;
+        padding: 50px;
+    }
+
+    //Design for each movie in MovieList page
+    .movie-container 
+   {
+        border-top:3px solid #90a4ae;
+       .movie-title 
+       {
+            padding: 1px 10px 5px 10px;
+            background-color: @lightgrey;
+            color: @darkgrey-text;
+       }
+
+       .movie-content 
+       {
+           padding:1px 10px 10px 10px;
+           background-color:@lightgrey;
+
+            .btn-category 
+            {
+                background-color: @grey;
+                color: @white-text;
+                border-color: #ab9b83;
+                padding:2px 8px;
+                font-size:14px;
+                font-weight:normal;
+                pointer-events: none;
+                cursor: default;
+            }
+       }
+   }
+
+    //Table design in Admin page
+    .table-header 
+    {
+        background-color:@lightdarkgrey;
+        color:@white-text;
+    }
+
+    //Searchbar 
+    .search-radio 
+    {
+        float:left;
+        padding-top:4px;
+    }
+
+    .search-textbox 
+    {
+        float:left;
+        margin-left:15px;
+        margin-right:5px;
+    }
+
+    .search-button 
+    {
+        float:left;
+    }
+}
+
+//BUTTON HOVER
+.btn:hover 
+{
+    color:@white-text; 
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#546e7a+0,263238+0,263238+19,546e7a+100 */
+    background: #546e7a; /* Old browsers */
+    background: -moz-linear-gradient(top,  #546e7a 0%, #263238 0%, #263238 19%, #546e7a 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #546e7a 0%,#263238 0%,#263238 19%,#546e7a 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #546e7a 0%,#263238 0%,#263238 19%,#546e7a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#546e7a', endColorstr='#546e7a',GradientType=0 ); /* IE6-9 */
+}
+
+.btn:focus 
+{
+    color:@white-text;
+    text-decoration:none;
+}
+
+//BUTTONS
+.btn-all-movies{background-color:@darkgrey; color:@white-text; border-radius:0px; padding:10px 30px 10px 30px; margin-top:10px;}
+.btn-register{background-color:@lightdarkgrey; color:@white-text; border-radius:0px; padding:10px 30px 10px 30px; margin-top:10px;}
+.btn-add {background-color: @darkgrey; color: @white-text; width:100%; border: none; border-radius: 0px; padding:10px; margin-top:10px;}
+.btn-add-more {background-color: @darkgrey; color: @white-text; width:20%; border: none; border-radius: 0px; padding:10px; margin-top:10px;}
+.btn-remove {background-color: @darkred; color:@white-text; border: none; border-radius: 0px;}
+.btn-crud {background-color: @lightgrey; color: @darkgrey-text; border: none; border-radius: 0px; padding:5px;}
+#registerLink {background-color: #ECEFF1;color: black;} 
+#loginLink {background-color: #90A4AE; color: white;}
+
+//FORM-CONTROL
+.form-control {display:inline-block;}
+
+//VALIDATION ERRORS 
+.field-validation-error {color: #f00;}
+.field-validation-valid { display: none;}
+.input-validation-error { border: 1px solid #f00; background-color:#fee; }
+
+//MARGINS
+.margin-extreme {margin-top:@margin-extreme;}
+.margin-large {margin-top:@margin-large;}
+.margin-medium {margin-top:@margin-medium;}
+.margin-small {margin-top:@margin-small;}
+.margin-right {margin-right:@margin-right;}
+.margin-left {margin-left:@margin-left;}
+.margin-bottom {margin-bottom:@margin-bottom;}
+
+//TEXT
+.white-text {color:@white-text;}
+.lightgrey-text {color:@lightgrey-text;}
+.grey-text {color:@grey-text;}
+.lightdarkgrey-text {color:@lightdarkgrey-text;}
+.darkgrey-text {color:@darkgrey-text;}
+
+//FONT-WEIGHT
+.bold {font-weight:bold;}
+
+
+
+//NAVBAR
+.navbar-inverse .navbar-nav > li > a {color:@lightgrey; font-weight:bold; text-transform:uppercase;}
+.navbar > .container .navbar-brand {margin-left: 0px;}
+
+.navbar {
+    margin-bottom:0px;
+    border-radius:0px;
+
+
+    .navbar-brand
+    {
+        font-family: 'Oswald', sans-serif !important;
+        border: 1px solid white;
+        color: @white-text;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight:bold;
+        margin-right:20px;
+        margin-left:0px;
+    }
+
+    .navbar-brand-2 
+    {
+        float: left;
+        padding: 15px 15px;
+        line-height: 20px;
+        font-family: 'Oswald', sans-serif !important;
+        border: 1px solid white;
+        color: @darkgrey-text;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight:bold;
+        margin-right:20px;
+        margin-left:0px;
+    }
+}
+
+.navbar-inverse{
+    padding:20px;
+    background-color:#263238;
+    border:#263238;
+}
+
+//FOOTER
+footer 
+{
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    padding: 20px 0px 7px 0px;
+    width: 100%;
+    background: @darkgrey;
+
+    p {
+        color:@white-text;
+    }
+}
+
+// ----------------------------------------------- STYLES FOR ALL PAGES -----------------------------------------------

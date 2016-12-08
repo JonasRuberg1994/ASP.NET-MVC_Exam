@@ -1,0 +1,30 @@
+﻿@model TheMovieList.Models.Movie
+
+<div class="col-lg-4 col-md-6 margin-small">
+    <div class="movie-container">
+
+        <!-- movie title -->
+        <div class="movie-title">
+            <h3>@Model.Title</h3>
+        </div>
+
+        <!-- movie content -->
+        <div class="movie-content">
+            <p><strong>Title: </strong>@Model.Title</p>
+            <p><strong>Year: </strong>@Model.Year</p>
+            <p><strong>Director: </strong>@Model.Director</p>
+            <p><strong>Category: </strong><a href="#" class="btn-category">@Model.Category.Name</a></p>
+
+            @using (Html.BeginForm("AddTofavorites", "Favorites")) //that every
+            {
+                <div>
+                    @Html.HiddenFor(x => x.MovieId)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                    <input type="submit" class="btn btn-add" value="Add to favorites" />
+                </div>
+            }
+ 
+        </div>
+    </div>
+</div> 
+

@@ -1,0 +1,67 @@
+﻿@model TheMovieList.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@Html.Partial("_HeaderAllPages")
+
+<div class="content-all">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div>
+                    <h4>Movie</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Category.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Category.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Title)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Year)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Year)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Director)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Director)
+                        </dd>
+
+                    </dl>
+                </div>
+
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.MovieId }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+
+
+
+
+            </div> <!-- col-md-12 ends -->
+        </div> <!-- row ends -->
+    </div> <!-- container ends -->
+</div> <!-- crud-content ends -->
+
+
+

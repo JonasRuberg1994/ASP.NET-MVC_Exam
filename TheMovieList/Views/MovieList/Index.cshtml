@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TheMovieList.Models.Movie>
+
+@{
+    ViewBag.Title = "Movielist";
+}
+
+@Html.Partial("_HeaderAllPages")
+
+<div class="content-all">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-right">
+
+                @using (Html.BeginForm("Index", "MovieList", FormMethod.Get))
+                {
+                    //Search
+                    <div class="search-bar">
+
+                        <b class="margin-right">Search By:</b>
+
+                        @* radio buttons - search by title, director, category *@
+                        @Html.RadioButton("searchBy", "Title", true) <text class="margin-right">Title</text>
+                        @Html.RadioButton("searchBy", "Director") <text class="margin-right">Director</text>
+
+                        @* search button *@
+                        @Html.TextBox("search", "", new { Class = "form-control" })
+                        <input type="submit" value="Search" class="btn btn-default" />
+                    </div>
+                }
+
+            </div>
+            
+        </div><!-- /.row -->
+
+        <hr />
+
+        <div class="row margin-small">
+
+            @foreach (var item in Model)
+            {
+                @Html.Partial("_MovieList", item)
+            }
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<TheMovieList.Models.Movie>
+
+@{
+    ViewBag.Title = "Movies";
+}
+
+@Html.Partial("_HeaderAllPages")
+
+<div class="content-all">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                @Html.Partial("_MenuForCrud")
+
+           
+                <div class="table-data margin-medium">
+                    <table class="table">
+                        <tr class="table-header">
+                            <th>
+                                @Html.DisplayNameFor(model => model.Category.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Title)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Year)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Director)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Category.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Year)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Director)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.MovieId }, new { Class = "btn-crud" }) 
+                                    @Html.ActionLink("Details", "Details", new { id = item.MovieId }, new { Class = "btn-crud" }) 
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.MovieId }, new { Class = "btn-crud" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+
+
+            </div> <!-- col-12 ends -->
+        </div> <!-- row ends -->
+    </div> <!-- container ends -->
+</div> <!-- crud content ends -->
+
+
+
+

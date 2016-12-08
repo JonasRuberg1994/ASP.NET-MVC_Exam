@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TheMovieList.Models.Category>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+
+@Html.Partial("_HeaderAllPages")
+
+<div class="content-all">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+               @Html.Partial("_MenuForCrud")
+
+                <div class="table-data margin-medium">
+                    <table class="table">
+                        <tr class="table-header">
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, new { Class = "btn-crud" }) 
+                                    @Html.ActionLink("Details", "Details", new { id = item.CategoryId }, new { Class = "btn-crud" }) 
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new { Class = "btn-crud" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
